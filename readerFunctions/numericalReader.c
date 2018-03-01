@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 
 const char INTEGER_READER_INVALID[] = "The number you entered is invalid, try again.";
 const char DOUBLE_READER_INVALID[] = "The number you entered is invalid, try again.";
