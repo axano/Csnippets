@@ -5,7 +5,7 @@
 //prompts a question
 //reads a string
 //assigns the read value to the string that is passed by reference
-//flushes stdin to forecome bugs due to remaining characters in the buffer
+//flushes stdin to avoid bugs due to remaining characters in the buffer
 //if a user gives in more characters than the limit
 //warns the user and reareads , if the input was bigger than the limit
 //by checking if the last char is a newline character
@@ -14,12 +14,12 @@
 void readString(char *stringToReadconst,const char *message, int size) {
    
     puts(message);
-    fgets(stringToReadconst, size, stdin);
     fflush(stdin);
+    fgets(stringToReadconst, size, stdin);
     while ((!strchr(stringToReadconst, '\n'))) {
         puts("Error");
-        fgets(stringToReadconst, size, stdin);
         fflush(stdin);
+        fgets(stringToReadconst, size, stdin);     
     }
     strip_newline(stringToReadconst);
     return ;
